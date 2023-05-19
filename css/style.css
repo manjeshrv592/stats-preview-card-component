@@ -1,0 +1,189 @@
+/* CSS Variables */
+:root {
+  /* Colors */
+  --very-dark-blue: hsl(233, 49%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --grey-1: hsl(245, 7%, 63%);
+  --grey-2: hsl(243, 8%, 46%);
+
+  /* Theming */
+  --color-accent: var(--soft-violet);
+  --color-primary: var(--dark-desaturated-blue);
+  --color-primary-dark: var(--very-dark-blue);
+  --body-color: var(--grey-1);
+  --body-bg: var(--color-primary-dark);
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Basic reset */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--body-color);
+  background-color: var(--body-bg);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+img,
+picture,
+video {
+  display: inline-block;
+  width: 100%;
+}
+
+/* Container */
+.container {
+  min-height: 100vh;
+  padding: 2.8rem 1.6rem;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  background-color: var(--color-primary);
+  width: 100%;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  max-width: 33rem;
+  box-shadow: 0 2rem 2rem -1rem rgba(23, 25, 41, 0.2);
+}
+
+.card-img {
+  height: 24rem;
+  width: 100%;
+  background-image: linear-gradient(
+      to right,
+      var(--color-accent),
+      var(--color-accent)
+    ),
+    url('./../images/image-header-mobile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+.card-content {
+  padding: 3.2rem;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.6rem;
+  color: var(--white);
+}
+
+.card-title span {
+  color: var(--color-accent);
+}
+
+.card-text {
+  margin-bottom: 4rem;
+}
+
+/* Stats */
+.stats-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-count {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.stats-text {
+  color: var(--grey-2);
+  font-size: 1.2rem;
+  font-family: 'Lexend Deca' sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/**************************************/
+/* Responsive styling */
+/**************************************/
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .card {
+    max-width: 111rem;
+    display: grid;
+    grid-template-columns: 1fr 54rem;
+  }
+
+  .card-img {
+    height: 100%;
+    background-image: linear-gradient(
+        to right,
+        var(--color-accent),
+        var(--color-accent)
+      ),
+      url('./../images/image-header-desktop.jpg');
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    padding: 7.2rem;
+    padding-bottom: 6rem;
+    text-align: left;
+  }
+
+  .card-title {
+    font-size: 3.6rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .card-text {
+    margin-bottom: 7.2rem;
+  }
+
+  .stats-group {
+    flex-direction: row;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
